@@ -1,7 +1,9 @@
 ## Lambda-Garden Due
-Prima edizione del lambda garden, un workshop basato su esercizi pensati per imparare la programmazione funzionale mettendola in pratica.
+Seconda edizione del lambda garden, un workshop basato su esercizi pensati per imparare la programmazione funzionale mettendola in pratica.
 
-In questo workshop impareremo ad usare le funzioni di ordine superiore filter, map e reduce per risolvere dei problemi comuni, come selezionare alcuni valori o calcolare somme e medie.
+Faremo un ripasso delle funzioni di ordine superiore filter, map e reduce per risolvere dei problemi comuni, come selezionare alcuni valori o calcolare somme e medie.
+
+Studieremo l'applicazione parziale delle funzioni e vedremo come mettere in pratica questi concetti per risolvere degli esercizi legati al gioco del filetto.
 
 To start, open index.html in any browser
 
