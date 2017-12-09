@@ -15,12 +15,12 @@ Data una matrice 3x3 tipo
 che rappresenta una partita a filetto conclusa,
 scrivere una funzione `vincitorePrimoTentativo` che determina se:
 * ha vinto `"X"`,
-* ha vinto `"O"``
+* ha vinto `"O"`,
 * o c'è stato il pareggio `" "`.
 
 Ad esempio, data la matrice riportata sopra, la funzione deve restituire l'esito corrispondente alla vittoria di "X".
 
-# Esercizio 2
+## Passo A
 
 Scrivere una funzione `vincitore` che, data una lista  di 3 elementi, restitusce:
 * `"X"` se contiene tutte `"X"`
@@ -37,7 +37,7 @@ Usare la funzione reduce.
 
 È possibile svolgere questo esercizio usando la funzione filter, con altre?
 
-# Esercizio 3
+## Passo B
 
 Scrivere delle funzioni che, data una cella di partenza, restituiscono la cella
 successiva, per coprire una riga una colonna o una diagonale.
@@ -51,7 +51,7 @@ Ad esempio, la funzione
 Queste funzioni sono dette funzioni successore.
 
 
-# Esercizio 4
+## Passo C
 
 Scrivere una funzione `generaVettore` che prende in ingresso:
 * la matrice 3x3
@@ -76,7 +76,7 @@ la funzione `generaVettore` dovrà restituire il vettore:
 
 `["X","O"," "]`
 
-# Esercizio 5
+## Passo D
 
 Usare le funzioni create nell'esercizio precedente.
 Data una matrice 3x3, restituire i vettori:
@@ -104,11 +104,11 @@ I vettori delle diagonali sono:
 * `[" ","X"," "]`
 * `["X","X","X"]`
 
-# Esercizio 6
+## Passo E
 
-Ripetere l'esercizio 1 usando le funzioni create nell'esercizio precedente
+Usare le funzioni create nei passi precedenti per risolvere l'esercizio 1
 
-# Esercizio 7
+# Esercizio 2
 
 Ripetere l'esercizio precedente con una matrice 10x10
 
@@ -134,7 +134,7 @@ non dovresti fare molta fatica per renderlo operativo su una matrice più grande
 
 Se sei stato particolarmente abile funzionerà in entrambi gli esercizi.
 
-# Esercizio 8
+# Esercizio 3
 
 È possibile riscrivere la soluzione all'esercizio precedente con meno codice?
 
