@@ -10,6 +10,7 @@ spec = do
   let matriceB = [ [' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' '] ]
   let matriceC = [ [' ', 'X', 'O'], [' ', 'O', 'X'], ['O', ' ', ' '] ]
   let matriceD = [ ['O', 'O', ' '], ['X', 'X', 'X'], [' ', ' ', ' '] ]
+  let matrice10x10 = [ ['X',' ',' ',' ',' ',' ',' ',' ','O',' '], [' ','X',' ',' ',' ',' ',' ',' ','O',' '], [' ',' ','X',' ',' ',' ',' ',' ','O',' '],[' ',' ',' ','X',' ',' ',' ',' ','O',' '], [' ',' ',' ',' ','X',' ',' ',' ','O',' '],  [' ',' ',' ',' ',' ','X',' ',' ','O',' '],  [' ',' ',' ',' ',' ',' ','X',' ','O',' '],  [' ',' ',' ',' ',' ',' ',' ','X','O',' '],  [' ',' ',' ',' ',' ',' ',' ',' ','X','O'],  [' ',' ',' ',' ',' ',' ',' ',' ','O','X']  ]
   describe "Esercizio1" $ do
     it "passoA" $ do
       shouldBe (vincitoreRiga ['X','X','X']) 'X'
@@ -31,3 +32,6 @@ spec = do
       shouldBe (vincitoreMatrice matriceB) ' '
       shouldBe (vincitoreMatrice matriceC) 'O'
       shouldBe (vincitoreMatrice matriceD) 'X'
+  describe "Esercizio1" $ do
+    it "passoE" $ do
+      shouldBe (vincitoreMatrice matrice10x10) 'X'
