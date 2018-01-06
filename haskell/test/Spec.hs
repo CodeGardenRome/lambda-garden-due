@@ -6,9 +6,28 @@ main = hspec spec
 
 spec :: Spec
 spec = do
-  describe "KataZero" $ do
-    it "stepA" $ do
-      vincitore ['X','X','X'] `shouldBe` 'X'
-      vincitore ['O','O','O'] `shouldBe` 'O'
-      vincitore ['O','O','X'] `shouldBe` ' '
-      vincitore ['O',' ','X'] `shouldBe` ' '
+  let matriceA = [ [' ', 'O', 'X'], [' ', 'X', 'O'], ['X', ' ', ' '] ]
+  let matriceB = [ [' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' '] ]
+  let matriceC = [ [' ', 'X', 'O'], [' ', 'O', 'X'], ['O', ' ', ' '] ]
+  let matriceD = [ ['O', 'O', ' '], ['X', 'X', 'X'], [' ', ' ', ' '] ]
+  describe "Esercizio1" $ do
+    it "passoA" $ do
+      shouldBe (vincitoreRiga ['X','X','X']) 'X'
+      shouldBe (vincitoreRiga ['O','O','O']) 'O'
+      shouldBe (vincitoreRiga ['O','O','X']) ' '
+      shouldBe (vincitoreRiga ['O',' ','X']) ' '
+    it "passoB" $ do
+      shouldBe (cellaSuccessivaRighe (2,1) ) (2,2)
+      shouldBe (cellaSuccessivaColonne (1,1) ) (2,1)
+      shouldBe (cellaSuccessivaDiagonaleMaggiore (1,1)) (2,2)
+      shouldBe ( cellaSuccessivaDiagonaleMinore (2,0)) (1,1)
+    it "passoC" $ do
+      shouldBe (generaVettore matriceA (0,0) cellaSuccessivaRighe) [' ', 'O', 'X']
+      shouldBe (generaVettore matriceA (0,0) cellaSuccessivaColonne) [' ', ' ', 'X']
+      shouldBe (generaVettore matriceA (0,0) cellaSuccessivaDiagonaleMaggiore) [' ', 'X', ' ']
+      shouldBe (generaVettore matriceA (2,0) cellaSuccessivaDiagonaleMinore) ['X', 'X', 'X']
+    it "passoD" $ do
+      shouldBe (vincitoreMatrice matriceA) 'X'
+      shouldBe (vincitoreMatrice matriceB) ' '
+      shouldBe (vincitoreMatrice matriceC) 'O'
+      shouldBe (vincitoreMatrice matriceD) 'X'

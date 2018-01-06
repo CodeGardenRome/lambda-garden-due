@@ -43,8 +43,8 @@ Scrivere delle funzioni che, data una cella di partenza, restituiscono la cella
 successiva, per coprire una riga una colonna o una diagonale.
 
 Ad esempio, la funzione
-* `cellaSuccessivaRighe([0,0]) = [1,0]`
-* `cellaSuccessivaColonne([0,0]) = [0,1]`
+* `cellaSuccessivaRighe([0,0]) = [0,1]`
+* `cellaSuccessivaColonne([0,0]) = [1,0]`
 * `cellaSuccessivaDiagonaleMaggiore([0,0]) = [1,1]`
 * `cellaSuccessivaDiagonaleMinore([0,2]) = [1,1]`
 
@@ -77,34 +77,6 @@ la funzione `generaVettore` dovrà restituire il vettore:
 `["X","O"," "]`
 
 ## Passo D
-
-Usare le funzioni create nell'esercizio precedente.
-Data una matrice 3x3, restituire i vettori:
-* delle righe,
-* delle colonne,
-* delle diagonali
-
-Ad esempio, data la matrice:
-
-    [ [" ", "O", "X"],
-      [" ", "X", "O"],
-      ["X", " ", " "] ]
-
-I vettori delle righe sono:
-* `[" ", "O", "X"]`
-* `[" ", "X", "O"]`
-* `["X", " ", " "]`
-
-I vettori delle colonne sono:
-* `[" "," ","X"]`
-* `["O","X"," "]`
-* `["X","O"," "]`
-
-I vettori delle diagonali sono:
-* `[" ","X"," "]`
-* `["X","X","X"]`
-
-## Passo E
 
 Usare le funzioni create nei passi precedenti per risolvere l'esercizio 1
 
