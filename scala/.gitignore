@@ -1,0 +1,8 @@
+.ensime*
+.idea
+.gradle
+target/
+/build/
+release.properties
+buildNumber.properties
+/incremental-katas-jvm-langs.iml
