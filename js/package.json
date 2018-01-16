@@ -1,0 +1,16 @@
+{
+  "name": "lambda-garden-due",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/CodeGardenRome/lambda-garden-due",
+  "author": "Lambda Garden",
+  "license": "MIT",
+  "dependencies" : {
+     "react-scripts": "1.0.13",
+     "lodash": "^4.17.4"
+  },
+  "scripts" : {
+     "start": "react-scripts start",
+     "test": "react-scripts test --env=jsdom"
+  }
+}
