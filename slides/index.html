@@ -130,24 +130,123 @@
                     <h1>Function Composition</h1>
                 </section>
                 <section>
-                    <ul>
-                        <h2>Partial</h2>
-                    </ul>
+                    <h2>Pipeline</h2>
+                    <pre><code data-trim data-neoscape class="javascript">
+// Pipeline in Javascript
+const btcToEur = 9951.1;
+const eurToDollar = 1.22440;
+const amount = 10;
+
+Number.prototype.convert = function(change) {
+  return this.valueOf() * change;
+}
+
+//da btc a euro
+amount.convert(btcToEur);
+//=> 99511
+
+//pipe from btc to dollars
+amount
+  .convert(btcToEur)
+  .convert(eurToDollar)
+//=> 121841.26839999999
+
+// Un po' più friendly
+amount
+  .convert(btcToEur)
+  .convert(eurToDollar)
+  .toFixed(2);
+//=> '121841.27'
+
+                    </code></pre>
                 </section>
                 <section>
-                    <ul>
-                        <h2>Pipeline</h2>
-                    </ul>
+                    <pre><code data-trim data-neoscape class="clojure">
+;; Pipeline in Clojure
+
+
+(def btcToEur 9951.1)
+(def eurToDollar 1.22440)
+(def amount 10)
+
+(->> amount
+    (* btcToEur)
+    (* eurToDollar)
+    (format "%.2f"))
+;;=>"121841.27"
+                    </code></pre>
                 </section>
                 <section>
-                    <ul>
-                        <h2>Compose</h2>
-                    </ul>
+                    <h2>Currying</h2>
+                    <pre><code data-trim data-neoscape class="javascript">
+const curryedBtcToDollar = amount => {
+  return toEurChange => {
+    return toDollarChange => {
+      return toFixed => {
+        return ((amount * toEurChange) * toDollarChange).toFixed(toFixed);
+      }
+    }
+  }
+};
+
+curryedBtcToDollar(10)(btcToEur)(eurToDollar)(2);
+//=> '121841.27'
+                    </code></pre>
                 </section>
                 <section>
-                    <ul>
-                        <h2>Wrap</h2>
-                    </ul>
+                    <h2>Partial</h2>
+                    <pre><code data-trim data-neoscape class="javascript">
+const btcToEurChange = 9951.1;
+const eurToDollarChange = 1.22440;
+
+const convert = (amount, change) => {
+  return amount * change;
+}
+
+const partialConvert = change => {
+  return (amount) => {
+    return convert(amount, change);
+  };
+}
+
+const btcToEur = partialConvert(btcToEurChange);
+btcToEur(10);
+//=> 99511
+
+const eurToDollar = partialConvert(eurToDollarChange);
+eurToDollar(btcToEur(10)).toFixed(2);
+//=> '121841.27'
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Compose</h2>
+                    <pre><code data-trim data-neoscape class="clojure">
+;; Questo è Clojure
+
+
+(filter (comp not zero?) [0 1 0 2 0 3 0 4])
+;;=> (1 2 3 4)
+                        </code></pre>
+                    <pre><code data-trim data-neoscape class="haskell">
+-- E questo invece è Haskell
+
+
+filter (not . (== 0)) [0,1,0,2,0,3,0,4]
+-- [1,2,3,4]
+                        </code></pre>
+                </section>
+                <section>
+                    <h2>Wrap</h2>
+                    <pre><code data-trim data-neoscape class="javascript">
+// High order function in Javascript
+
+
+const highOrderFunction = (myFunction, data) => {
+    return () => {
+        data + myFunction();
+    }
+}
+                        </code></pre>
                 </section>
                 <section>
                     <h2>Composition Hell</h2>
