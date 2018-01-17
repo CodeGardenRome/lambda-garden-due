@@ -79,10 +79,22 @@ public class LambdaGardenDueTest {
     }
 
     @Test
-    void verificaParteD(){
+    void verificaParteD1(){
         assertEquals(Character.valueOf('X'), lambdaGardenDue.vincitoreMatrice(matriceA));
+    }
+
+    @Test
+    void verificaParteD2(){
         assertEquals(Character.valueOf(' '), lambdaGardenDue.vincitoreMatrice(matriceB));
+    }
+
+    @Test
+    void verificaParteD3(){
         assertEquals(Character.valueOf('O'), lambdaGardenDue.vincitoreMatrice(matriceC));
+    }
+
+    @Test
+    void verificaParteD4(){
         assertEquals(Character.valueOf('X'), lambdaGardenDue.vincitoreMatrice(matriceD));
     }
 
