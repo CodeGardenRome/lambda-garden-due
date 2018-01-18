@@ -1,4 +1,5 @@
 .DS_Store
 slides/node_modules
+package-lock.json
 php/vendor/
 php/.idea

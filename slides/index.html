@@ -185,6 +185,8 @@ amount
                 </section>
                 <section data-background="asset/hyperjump.jpg">
                     <pre><code data-trim data-neoscape class="elixir">
+# pipeline in Elixir
+
 1..100_000
   |> Enum.map(&(&1 * 3))
   |> Enum.filter(odd?)
@@ -268,9 +270,130 @@ const highOrderFunction = (myFunction, data) => {
                     <h2 class="hell-header">Composition Hell</h2>
                 </section>
             </section>
-            <section data-background="asset/hyperjump.gif">
-                <h2>Workshop - Tic-Tac-Toe</h2>
-                <image src="asset/workshop.jpg" style="width:80%;height:80%" />
+            <section>
+                <section data-background="asset/hyperjump.gif">
+                    <h2>Workshop - Tic-Tac-Toe</h2>
+                    <image src="asset/workshop.jpg" style="width:80%;height:80%" />
+                </section>
+                <section data-background="asset/hyperjump.jpg">
+                    
+                <pre><code data-trim data-neoscape class="haskell">
+Data una matrice 3x3 tipo
+                
+    [ [" ", "O", "X"],
+      [" ", "X", "O"],
+      ["X", " ", " "] ]
+
+che rappresenta una partita a filetto conclusa, scrivere una funzione 
+
+    * ha vinto "X"
+    * ha vinto "O"
+    * c'è stato il pareggio " " (o un analogo per dire nessun vincitore)
+
+     </code></pre>
+Ad esempio, data la matrice riportata sopra, la funzione deve restituire l'esito corrispondente alla vittoria di "X".
+                </section>
+                <section data-background="asset/hyperjump.jpg">
+    <h3>Passo A</h3>
+                    
+                <pre><code data-trim data-neoscape class="haskell">
+    
+    Scrivere una funzione `vincitore` che, data una lista  di 3 elementi, restitusce:
+    * `"X"` se contiene tutte `"X"`
+    * `"O"` se contiene tutte `"O"`
+    * `" "` altrimenti
+    
+    Ad esempio:
+    * `vincitore(["X","X","X"])` deve restituire `"X"`
+    * `vincitore(["O","O","O"])` deve restituire `"O"`
+    * `vincitore(["O","O","X"])` deve restituire `" "`
+    * `vincitore(["O"," ","X"])` deve restituire `" "`
+               </code></pre>
+    
+    Usare la funzione "reduce".
+    
+    <div>È possibile svolgere questo esercizio usando la funzione "filter", con altre?</div>
+                </section>
+                <section data-background="asset/hyperjump.jpg">
+    <h2>Passo B</h2>
+<pre><code data-trim data-neoscape class="haskell">
+
+    Scrivere delle funzioni che, data una cella di partenza, restituiscono la cella
+    successiva, per coprire una riga una colonna o una diagonale.
+
+    Ad esempio, la funzione
+    * `cellaSuccessivaRighe([0,0]) = [0,1]`
+    * `cellaSuccessivaColonne([0,0]) = [1,0]`
+    * `cellaSuccessivaDiagonaleMaggiore([0,0]) = [1,1]`
+    * `cellaSuccessivaDiagonaleMinore([0,2]) = [1,1]`
+
+    Queste funzioni sono dette funzioni successore.
+                </code></pre>
+                </section>
+                <section data-background="asset/hyperjump.jpg">
+    <h2>Passo C</h2>
+                <pre><code data-trim data-neoscape class="haskell">
+
+    Scrivere una funzione `generaVettore` che prende in ingresso:
+    * la matrice 3x3
+    * la cella di partenza
+    * la funzione successore
+
+    E restituisce un vettore di 3 elementi corrispondente alla riga.
+
+    Ad esempio, data la matrice:
+
+    [ [" ", "O", "X"],
+    [" ", "X", "O"],
+    ["X", " ", " "] ]
+
+    Se la cella di partenza è `[1,0]` e la funzione successore è quella delle righe,
+    la funzione generaVettore dovrà restituire il vettore:
+
+    `[" ","X","O"]`
+
+    Se, invece, la cella di partenza è `[0,2]` e la funzione successore è quella delle colonne,
+    la funzione `generaVettore` dovrà restituire il vettore:
+
+    `["X","O"," "]`
+                
+                </code></pre>
+                </section>
+                <section data-background="asset/hyperjump.jpg">
+    <h2>Passo D</h2>
+    
+    Usare le funzioni create nei passi precedenti per risolvere l'esercizio 1
+                </section>
+                <section data-background="asset/hyperjump.jpg">
+    Ripetere l'esercizio precedente con una matrice 10x10
+                <pre><code data-trim data-neoscape class="haskell">
+
+    Ad esempio, data la lista:
+
+    [ ["X"," "," "," "," "," "," "," ","O"," "],
+    [" ","X"," "," "," "," "," "," ","O"," "],
+    [" "," ","X"," "," "," "," "," ","O"," "],
+    [" "," "," ","X"," "," "," "," ","O"," "],
+    [" "," "," "," ","X"," "," "," ","O"," "],
+    [" "," "," "," "," ","X"," "," ","O"," "],
+    [" "," "," "," "," "," ","X"," ","O"," "],
+    [" "," "," "," "," "," "," ","X","O"," "],
+    [" "," "," "," "," "," "," "," ","X","O"],
+    [" "," "," "," "," "," "," "," ","O","X"]
+    ]
+
+    La funzione deve restituire l'esito corrispondente alla vittoria di "X".
+                </code></pre>
+
+    <div style="font-size: 75%;">Se il programma dell'esercizio 1 è stato fatto seguendo una forma generica, cosa che viene più facile attraverso i principi del paradigma funzionale,
+        non dovresti fare molta fatica per renderlo operativo su una matrice più grande.</div>
+
+    <div style="font-size: 75%;">Se sei stato particolarmente abile funzionerà in entrambi gli esercizi.</div>
+
+                </section>
+                <section data-background="asset/hyperjump.jpg">
+                    <p>È possibile riscrivere la soluzione all'esercizio precedente con meno codice?</p>
+                </section>
             </section>
             <section data-background="asset/thanks.gif" data-background-size="100% auto">
                 <h1>Grazie :)</h1>
