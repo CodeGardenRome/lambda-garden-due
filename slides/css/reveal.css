@@ -1354,11 +1354,3 @@ body {
 
 .zoomed .reveal .roll span:after {
   visibility: hidden; }
-
-/*********************************************
- * CUSTOM
- *********************************************/
-.reveal h2.hell-header {
-  text-shadow: 0px 0px 15px black ;
-  padding-top: 15% !important;
-}
