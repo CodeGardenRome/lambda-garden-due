@@ -1,2 +1,4 @@
 .DS_Store
 slides/node_modules
+php/vendor/
+php/.idea
