@@ -12,26 +12,26 @@ spec = do
   let matriceD = [ ['O', 'O', ' '], ['X', 'X', 'X'], [' ', ' ', ' '] ]
   let matrice10x10 = [ ['X',' ',' ',' ',' ',' ',' ',' ','O',' '], [' ','X',' ',' ',' ',' ',' ',' ','O',' '], [' ',' ','X',' ',' ',' ',' ',' ','O',' '],[' ',' ',' ','X',' ',' ',' ',' ','O',' '], [' ',' ',' ',' ','X',' ',' ',' ','O',' '],  [' ',' ',' ',' ',' ','X',' ',' ','O',' '],  [' ',' ',' ',' ',' ',' ','X',' ','O',' '],  [' ',' ',' ',' ',' ',' ',' ','X','O',' '],  [' ',' ',' ',' ',' ',' ',' ',' ','X','O'],  [' ',' ',' ',' ',' ',' ',' ',' ','O','X']  ]
   describe "Esercizio1" $ do
-    it "passoA" $ do
+    it "parteA" $ do
       shouldBe (vincitoreRiga ['X','X','X']) 'X'
       shouldBe (vincitoreRiga ['O','O','O']) 'O'
       shouldBe (vincitoreRiga ['O','O','X']) ' '
       shouldBe (vincitoreRiga ['O',' ','X']) ' '
-    it "passoB" $ do
+    it "parteB" $ do
       shouldBe (cellaSuccessivaRighe (2,1) ) (2,2)
       shouldBe (cellaSuccessivaColonne (1,1) ) (2,1)
       shouldBe (cellaSuccessivaDiagonaleMaggiore (1,1)) (2,2)
       shouldBe ( cellaSuccessivaDiagonaleMinore (2,0)) (1,1)
-    it "passoC" $ do
+    it "parteC" $ do
       shouldBe (generaVettore matriceA (0,0) cellaSuccessivaRighe) [' ', 'O', 'X']
       shouldBe (generaVettore matriceA (0,0) cellaSuccessivaColonne) [' ', ' ', 'X']
       shouldBe (generaVettore matriceA (0,0) cellaSuccessivaDiagonaleMaggiore) [' ', 'X', ' ']
       shouldBe (generaVettore matriceA (2,0) cellaSuccessivaDiagonaleMinore) ['X', 'X', 'X']
-    it "passoD" $ do
+    it "parteD" $ do
       shouldBe (vincitoreMatrice matriceA) 'X'
       shouldBe (vincitoreMatrice matriceB) ' '
       shouldBe (vincitoreMatrice matriceC) 'O'
       shouldBe (vincitoreMatrice matriceD) 'X'
-  describe "Esercizio1" $ do
-    it "passoE" $ do
+  describe "Esercizio2" $ do
+    it "parteE" $ do
       shouldBe (vincitoreMatrice matrice10x10) 'X'
