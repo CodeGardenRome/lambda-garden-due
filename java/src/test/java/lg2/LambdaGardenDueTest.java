@@ -1,11 +1,13 @@
 package lg2;
 
 import lg2.LambdaGardenDue.Cella;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Tag("fast")
 public class LambdaGardenDueTest {
 
     LambdaGardenDue lambdaGardenDue = new LambdaGardenDue();
