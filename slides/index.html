@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/theme/starwars.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -26,45 +27,47 @@
 <body>
     <div class="reveal">
         <div class="slides">
-            <section data-background-color="#FFFFFF" data-background-image="asset/lambda_logo.png" data-background-size="75% auto" data-background-position="center top">
-                <h1 style="margin-top:5em">Lambda Garden 2</h1>
+            <section data-background-color="#FFF">
+                <img style="box-shadow: none;" src="asset/lambda_logo.png">
+                <h1 style="font-family: serif">Lambda Garden 2</h1>
             </section>
             <section>
-                <section>
+                <section  data-background-color="#000">
+                    <img src="asset/falcon.gif">
                     <h1>Recap</h1>
                 </section>
-                <section>
+                <section data-background="asset/hyperjump.jpg">
                     <ul>
                         <li>Il paradigma funzionale è l'applicazione informatica del Lambda Calculus</li>
                         <li>Ma nessuno ha praticamente mai costruito un <strong>computer funzionale</strong></li>
                         <li>Anzi il modello hardware che si è imposto sposa la computazione procedurale</li>
                     </ul>
                 </section>
-                <section>
+                <section data-background="asset/hyperjump.jpg">
                     <ul>
                         <li>Negli ultimi anni si sono diffusi processori multi core. La computazione concorrente richiede un cambiamento...</li>
                         <li>L'aumento esponenziale di dati e del codice per gestirli richiedono safety e mantenibilità...</li>
                     </ul>
                 </section>
-                <section>
+                <section data-background="asset/hyperjump.jpg">
                     <ul>
                         <li>Il paradigma funzionale è <strong>safe</strong> e necessita di dati <strong>immutabili</strong></li>
                         <li>Dati immutabili sono una marcia in più nella computazione concorrente</li>
                         <li>I suoi concetti sono complessi ma la forma di questi è semplice</li>
                     </ul>
                 </section>
-                <section>
+                <section data-background="asset/hyperjump.jpg">
                     <p>Infiniti livelli di complessità possono essere realizzati con lo strumento più semplice e versatile in informatica...</p>
                     <h3>La Funzione</h3>
                 </section>
-                <section>
+                <section data-background="asset/hyperjump.jpg">
                     <ul>
                         <li>Moltissime aziende oggi sviluppano con linguaggi funzionali</li>
                         <li>I big four (Facebook, Google, Apple, Microsoft) hanno investito tempo e denaro nella creazione di un linguaggio funzionale a testa</li>
                         <li>Negli scorsi anni Intel ha avviato un progetto di ricerca su Haskell</li>
                     </ul>
                 </section>
-                <section>
+                <section data-background="asset/hyperjump.jpg">
                     <ul>
                         <p>Come i funghi compaiono librerie funzionali per tutti i linguaggi non funzionali...</p>
                         <li>Java: Vavr, Spring WebFlux</li>
@@ -72,7 +75,7 @@
                         <li>Javascript: Redux, Rambda, ImmutableJs...</li>
                     </ul>
                 </section>
-                <section>
+                <section data-background="asset/hyperjump.jpg">
                     <ul>
                         <p>I linguaggi di forte ispirazione funzionale conquistano la loro fetta di mercato</p>
                         <li>Scala</li>
@@ -86,7 +89,7 @@
                         <li>Eccetera...</li>
                     </ul>
                 </section>
-                <section>
+                <section data-background="asset/hyperjump.jpg">
                     <ul>
                         <h3>Side effects</h3>
                         <li>Sono input e output non evidenti nel codice</li>
@@ -95,7 +98,7 @@
                         <li>Portano a mutazioni non facilmente prevedibili dei dati</li>
                     </ul>
                 </section>
-                <section>
+                <section data-background="asset/hyperjump.jpg">
                     <ul>
                         <p>Per essere pura...</p>
                         <li>Tutti gli input di una funzione devono essere nei suoi argomenti</li>
@@ -103,7 +106,7 @@
                         <li>Insomma non deve avere side effects</li>
                     </ul>
                 </section>
-                <section>
+                <section data-background="asset/hyperjump.jpg">
                     <h2>Funzioni di ordine superiore</h2>
                     <ul>
                         <p>Una funzione è un dato. Posso passare una funzione come argomento. Posso ritornare una funzione come output</p>
@@ -115,21 +118,25 @@
                 </section>
             </section>
             <section>
-                <section>
-                    <ol>
-                        <h2>50 sfumature di funzionale...</h2>
-                        <li>Vivere con i side effects</li>
-                        <li>Costrutti del nostro linguaggio (arrow functions, lambda, stream api...)</li>
-                        <li>Librerie del nostro linguaggio (rambda, vavr.io, functional-php)</li>
-                        <li>Linguaggio multi paradigma (scala, rust, kotlin, elm)</li>
-                        <li>Linguaggio funzionale (haskell, clojure, erlang, elixir)</li>
-                        <li>Purity</li>
-                    </ol>
+                <section data-background-color="#000" data-background="asset/dark-side.jpg" data-background-size="40%" data-background-position="bottom center">
+                    <div style="margin-top:-20%;">
+
+                        <ol>
+                            <h2>50 sfumature di funzionale...</h2>
+                            <li>Vivere con i side effects</li>
+                            <li>Costrutti del nostro linguaggio (arrow functions, lambda, stream api...)</li>
+                            <li>Librerie del nostro linguaggio (rambda, vavr.io, functional-php)</li>
+                            <li>Linguaggio multi paradigma (scala, rust, kotlin, elm)</li>
+                            <li>Linguaggio funzionale (haskell, clojure, erlang, elixir)</li>
+                            <li>Purity</li>
+                        </ol>
+                        
+                    </div>
                 </section>
-                <section>
+                <section data-background="asset/hyperjump.jpg">
                     <h1>Function Composition</h1>
                 </section>
-                <section>
+                <section data-background="asset/hyperjump.jpg">
                     <h2>Pipeline</h2>
                     <pre><code data-trim data-neoscape class="javascript">
 // Pipeline in Javascript
@@ -160,7 +167,7 @@ amount
 
                     </code></pre>
                 </section>
-                <section>
+                <section data-background="asset/hyperjump.jpg">
                     <pre><code data-trim data-neoscape class="clojure">
 ;; Pipeline in Clojure
 
@@ -176,7 +183,7 @@ amount
 ;;=>"121841.27"
                     </code></pre>
                 </section>
-                <section>
+                <section data-background="asset/hyperjump.jpg">
                     <h2>Currying</h2>
                     <pre><code data-trim data-neoscape class="javascript">
 const curryedBtcToDollar = amount => {
@@ -193,7 +200,7 @@ curryedBtcToDollar(10)(btcToEur)(eurToDollar)(2);
 //=> '121841.27'
                     </code></pre>
                 </section>
-                <section>
+                <section data-background="asset/hyperjump.jpg">
                     <h2>Partial</h2>
                     <pre><code data-trim data-neoscape class="javascript">
 const btcToEurChange = 9951.1;
@@ -218,7 +225,7 @@ eurToDollar(btcToEur(10)).toFixed(2);
 //=> '121841.27'
                     </code></pre>
                 </section>
-                <section>
+                <section data-background="asset/hyperjump.jpg">
                     <h2>Compose</h2>
                     <pre><code data-trim data-neoscape class="clojure">
 ;; Questo è Clojure
@@ -235,7 +242,7 @@ filter (not . (== 0)) [0,1,0,2,0,3,0,4]
 -- [1,2,3,4]
                         </code></pre>
                 </section>
-                <section>
+                <section data-background="asset/hyperjump.jpg">
                     <h2>Wrap</h2>
                     <pre><code data-trim data-neoscape class="javascript">
 // High order function in Javascript
@@ -248,20 +255,19 @@ const highOrderFunction = (myFunction, data) => {
 }
                         </code></pre>
                 </section>
-                <section>
-                    <h2>Composition Hell</h2>
-                    <image src="asset/matrix.png" style="width:80%;height:80%" />
+                <section data-background="asset/dark-side-hell.jpg">
+                    <h2 class="hell-header">Composition Hell</h2>
                 </section>
             </section>
-            <section>
-                <section>
-                    <h2>Workshop - Tic-Tac-Toe</h2>
-                    <image src="asset/wargames.jpg" style="width:80%;height:80%" />
-                </section>
+            <section data-background="asset/hyperjump.gif">
+                <h2>Workshop - Tic-Tac-Toe</h2>
+                <image src="asset/workshop.jpg" style="width:80%;height:80%" />
             </section>
-
-            <section>
+            <section data-background="asset/thanks.gif" data-background-size="100% auto">
                 <h1>Grazie :)</h1>
+            </section>
+            <section data-background-color="#000" data-background="asset/close.jpg" data-background-size="auto 100%">
+                <h1></h1>
             </section>
         </div>
     </div>
